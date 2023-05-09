@@ -1,0 +1,117 @@
+.collapse {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.collapse-title {
+  background: #ff6060;
+  border-radius: 5px;
+  height: 47px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  transition: all 0.2s ease-in-out;
+  width: 12px;
+}
+
+.arrowDown {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  transform: rotate(180deg);
+}
+
+.arrowUp {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  transform: rotate(0deg);
+}
+
+.collapse-title h3 {
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+  margin-left: 18px;
+}
+
+.collapse-content {
+  background: #f7f7f7;
+  border-radius: 0 0 5px 5px;
+  width: 90%;
+  margin-top: -5px;
+  padding: 40px 20px;
+  margin-bottom: 20px;
+}
+
+.collapse-content-hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+.collapse-content li {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Montserrat";
+  font-style: normal;
+  list-style-type: none;
+  color: #ff6060;
+  margin-bottom: 10px;
+}
+
+.collapse-content p {
+  font-weight: 400;
+  font-size: 18px;
+
+  color: #ff6060;
+}
+
+.arrows-collapse {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+  .collapse {
+    margin-top: 20px;
+  }
+
+  .collapse-title {
+    height: 30px;
+  }
+
+  .collapse-title h3 {
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 12px;
+  }
+
+  .arrows-collapse {
+    width: 16px;
+  }
+
+  .collapse-content p {
+    font-size: 12px;
+  }
+
+  .collapse-content {
+    padding: 20px 30px;
+  }
+
+  .collapse-content li {
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}

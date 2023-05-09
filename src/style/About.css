@@ -1,0 +1,17 @@
+.about-container {
+  padding: 0px 68px;
+  margin-top: 44px;
+  margin-bottom: 200px;
+}
+.about-tab-container {
+  padding: 0px 120px;
+}
+@media screen and (max-width: 950px) {
+  .about-container {
+    padding: 0px 20px;
+    margin-top: 20px;
+  }
+  .about-tab-container {
+    padding: 0;
+  }
+}
