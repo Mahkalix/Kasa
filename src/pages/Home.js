@@ -15,7 +15,7 @@ const Home = () => {
           {data.map((acc) => {
             return (
               <li key={acc.id}>
-                <Link to={{ pathname: `/logement/${acc.id}` }}>
+                <Link to={{ pathname: "/Accomodation" }}>
                   <Card
                     props={{
                       url: acc.cover,

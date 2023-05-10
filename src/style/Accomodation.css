@@ -1,0 +1,8 @@
+.accomodation-container {
+  width: 100%;
+  height: 500px;
+}
+
+.accomodation-container img {
+  object-fit: cover;
+}
