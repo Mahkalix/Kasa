@@ -7,26 +7,20 @@ const Slider = (images) => {
   const [counter, setCounter] = useState(0);
   const pictures = images.images;
   const slideLength = pictures.length;
-  //console.log(pictures);
 
   let actualImage;
   actualImage = pictures[counter];
 
   const slideLeft = () => {
-    setCounter(counter - 1);
-    {
-      counter === 0 && setCounter(slideLength - 1);
-    }
+    setCounter((counter - 1 + slideLength) % slideLength);
   };
 
   const slideRight = () => {
-    setCounter(counter + 1);
-    {
-      counter >= slideLength - 1 && setCounter(0);
-    }
+    setCounter((counter + 1) % slideLength);
   };
 
-  console.log(counter);
+  // console.log(counter);
+
   return (
     <div className="slider-container">
       <img
@@ -34,25 +28,23 @@ const Slider = (images) => {
         src={actualImage}
         alt="Image chambre d'un hôte"
       />
-      {slideLength === 1 ? null : (
-        <div className="sup-container">
-          <img
-            onClick={() => slideLeft()}
-            className="arrow arrow-left"
-            src={arrowLeft}
-            alt="arrow left"
-          />
-          <p className="counter">
-            {counter + 1}/{slideLength}
-          </p>
-          <img
-            onClick={() => slideRight()}
-            className="arrow arrow-right"
-            src={arrowRight}
-            alt="arrow right"
-          />{" "}
-        </div>
-      )}
+      <div className="sup-container">
+        <img
+          onClick={slideLeft}
+          className="arrow arrow-left"
+          src={arrowLeft}
+          alt="arrow left"
+        />
+        <p className="counter">
+          {counter + 1}/{slideLength}
+        </p>
+        <img
+          onClick={slideRight}
+          className="arrow arrow-right"
+          src={arrowRight}
+          alt="arrow right"
+        />
+      </div>
     </div>
   );
 };

@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-.arrow {
+.Arrow {
   transition: all 0.2s ease-in-out;
   width: 12px;
 }
