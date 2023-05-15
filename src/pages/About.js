@@ -1,14 +1,13 @@
 import React from "react";
 import "../style/About.css";
-import Banner from "../components/banner";
 import Collapse from "../components/collapse";
 import Mountain from "../assets/images/Mountain.svg";
 
 const About = () => {
   return (
     <div className="about-container">
-      <Banner props={Mountain} />
-      <div className="about-Collapse-container">
+      <img className="moutain" src={Mountain} alt=" montagne" />
+      <div className="about-collapse-container">
         <Collapse
           state={{
             title: "Fiabilité",
@@ -33,7 +32,8 @@ const About = () => {
         <Collapse
           state={{
             title: "Sécurité",
-            description: `La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité éCollapselis par nos services. En laissant une note aussi bien à l'\hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.`,
+            description:
+              "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité éCollapselis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
           }}
         />
       </div>
