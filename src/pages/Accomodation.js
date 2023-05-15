@@ -13,6 +13,20 @@ const Accomodation = () => {
   const data = dataAccomodation.find((item) => item.id === id);
   console.log(data);
 
+  const numberStars = parseInt(data.rating);
+  const stars = [];
+
+  for (let i = 0; i < numberStars; i++) {
+    stars.push(
+      <img
+        src={starFull}
+        alt="note sur 5"
+        key={i}
+        className="star filled-star"
+      />
+    );
+  }
+
   return (
     <div className="accomodation-container">
       <Slider images={data.pictures} />
@@ -23,6 +37,7 @@ const Accomodation = () => {
           <h2 className="accomodation-location">{data.location}</h2>
         </div>
       </div>
+
       <div className="accomodation-tags-stars">
         <ul className="tags">
           {data.tags.map((tag, index) => (
@@ -32,11 +47,17 @@ const Accomodation = () => {
           ))}
         </ul>
 
-        <div className="acc-stars-host">
+        <div className="user">
+          <div className="accomodation-host">
+            <p>{data.host.name}</p>
+            <img
+              src={data.host.picture}
+              alt={"photo de profil de " + data.host.name}
+            />
+          </div>
+
           <div className="accomodation-stars">
-            <div className=" filled-star-container ">
-              <img src={starFull} />
-            </div>
+            <div className=" filled-star-container "> {stars}</div>
             <div className=" empty-star-container">
               <img
                 src={starsEmpty}
@@ -65,13 +86,29 @@ const Accomodation = () => {
               />
             </div>
           </div>
+        </div>
 
-          <div className="accomodation-host">
-            <p>{data.host.name}</p>
-            <img
-              src={data.host.picture}
-              alt={"photo de profil de " + data.host.name}
-            />
+        <div className="collapse-container">
+          <div className="collapse-description">
+            {dataAccomodation[0] && (
+              <Collapse
+                state={{
+                  title: "Description",
+                  description: dataAccomodation[0].description,
+                }}
+              />
+            )}
+          </div>
+
+          <div className="collapse-equipment">
+            {dataAccomodation[0] && (
+              <Collapse
+                state={{
+                  title: "Equipments",
+                  equipments: dataAccomodation[0].equipments,
+                }}
+              />
+            )}
           </div>
         </div>
       </div>
