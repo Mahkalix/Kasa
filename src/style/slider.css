@@ -41,7 +41,6 @@
 
 @media screen and (max-width: 425px) {
   .slider-container {
-    margin: auto;
     width: 90%;
     height: 255px;
     border-radius: 10px;

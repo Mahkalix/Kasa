@@ -191,3 +191,24 @@
     margin-left: -6%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .infos-container {
+    display: flex;
+    justify-content: center;
+    width: 85%;
+    margin-left: 30px;
+  }
+
+  .accomodation-host p {
+    display: flex;
+    width: 20%;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .accomodation-host img {
+    display: flex;
+    height: 32px;
+    width: 32px;
+  }
+}
