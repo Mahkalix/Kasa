@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../style/Accomodation.css";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -7,18 +7,20 @@ import dataAccomodation from "../data/logements.json";
 import Collapse from "../components/collapse";
 import starsEmpty from "../assets/icons/star-empty.svg";
 import starFull from "../assets/icons/star-full.svg";
-import Error from "../pages/Error";
 
 const Accomodation = () => {
-  const params = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
-  const id = params.id;
   const data = dataAccomodation.find((item) => item.id === id);
-  console.log(data);
+
+  useEffect(() => {
+    if (!data) {
+      navigate("/error");
+    }
+  }, [data, navigate]);
 
   if (!data) {
-    navigate("/Error");
-    return null;
+    return null; // Optionnel : Afficher une vue de chargement ou un message d'erreur temporaire pendant la vérification des données
   }
 
   const numberStars = parseInt(data.rating);
