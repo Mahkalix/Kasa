@@ -7,14 +7,14 @@ import Accomodation from "../pages/Accomodation";
 
 const router = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="*" element={<Error />} />
         <Route path="/Accomodation/:id" element={<Accomodation />} />
       </Routes>
-    </div>
+    </>
   );
 };
 

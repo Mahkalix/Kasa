@@ -1,11 +1,8 @@
-.accomodation-container {
-  position: relative;
-}
-
 .infos-container {
   display: flex;
   flex-direction: column;
-  margin-left: 60px;
+  margin-left: 50px;
+  position: relative;
 }
 .accomodation-title {
   color: #ff6060;
@@ -99,14 +96,14 @@
 
 .user {
   position: absolute;
-  right: 50px;
-  top: 440px;
+  right: 100px;
+  top: 24px;
 }
 
 .collapse-container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 15px;
+  margin-bottom: 60px;
   margin-left: -32px;
 }
 
@@ -119,12 +116,8 @@
 }
 
 @media screen and (max-width: 950px) {
-  .accomodation {
-    margin-left: 50px;
-  }
-
   .infos-container {
-    margin: auto;
+    margin-right: 50px;
   }
   .accomodation-header {
     display: flex;
@@ -143,11 +136,43 @@
     font-size: 10px;
   }
 
-  .tags {
-    margin-left: 20px;
-  }
   .user {
-    top: 2px;
+    margin: 16px 0 16px 0;
+    display: flex;
+    position: static;
+    width: 100%;
+    height: 50px;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .accomodation-host {
+    display: flex;
+    align-items: center;
+  }
+  .accomodation-host p {
+    display: flex;
+    width: 10%;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .accomodation-host img {
+    display: flex;
+    height: 32px;
+    width: 32px;
+  }
+
+  .empty-star-container {
+    display: flex;
+    top: 5px;
+    justify-content: flex-start;
+    left: -10px;
+  }
+  .filled-star-container {
+    display: flex;
+    top: 5px;
+    left: -10px;
+    justify-content: flex-start;
   }
 
   .collapse-container {
@@ -157,10 +182,12 @@
   }
 
   .collapse-description {
-    width: 100%;
+    width: 110%;
+    margin-left: -6%;
   }
   .collapse-equipment {
-    width: 100%;
-    margin-bottom: 20px;
+    width: 110%;
+    margin-bottom: 60px;
+    margin-left: -6%;
   }
 }
