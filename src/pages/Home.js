@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import "../style/Home.css";
 import Banner from "../components/banner";
 import Card from "../components/card";
-import Cliff from "../assets/icons/kasa-logo.svg";
 import data from "../data/logements.json";
 
 const Home = () => {
   return (
     <div className="home-container">
-      <Banner props={Cliff} />
+      <Banner />
       <div className="home-card-container">
         <ul>
           {data.map((acc) => {

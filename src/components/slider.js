@@ -23,11 +23,7 @@ const Slider = (images) => {
 
   return (
     <div className="slider-container">
-      <img
-        className="slider-img"
-        src={actualImage}
-        alt="Image chambre d'un hôte"
-      />
+      <img className="slider-img" src={actualImage} alt="chambre d'un hôte" />
       <div className="sup-container">
         <img
           onClick={slideLeft}

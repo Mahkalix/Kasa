@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Slider from "../components/slider";
 import dataAccomodation from "../data/logements.json";
 import Collapse from "../components/collapse";
-import starsEmpty from "../assets/icons/star-empty.svg";
-import starFull from "../assets/icons/star-full.svg";
+import Rating from "../components/rating";
 
 const Accomodation = () => {
   const { id } = useParams();
@@ -18,24 +17,6 @@ const Accomodation = () => {
       navigate("/error");
     }
   }, [data, navigate]);
-
-  if (!data) {
-    return null; // Optionnel : Afficher une vue de chargement ou un message d'erreur temporaire pendant la vérification des données
-  }
-
-  const numberStars = parseInt(data.rating);
-  const stars = [];
-
-  for (let i = 0; i < numberStars; i++) {
-    stars.push(
-      <img
-        src={starFull}
-        alt="note sur 5"
-        key={i}
-        className="star filled-star"
-      />
-    );
-  }
 
   return (
     <div className="accomodation-container">
@@ -66,37 +47,7 @@ const Accomodation = () => {
                 alt={"photo de profil de " + data.host.name}
               />
             </div>
-
-            <div className="accomodation-stars">
-              <div className=" filled-star-container "> {stars}</div>
-              <div className=" empty-star-container">
-                <img
-                  src={starsEmpty}
-                  alt="pas de note"
-                  className="star empty-star"
-                />
-                <img
-                  src={starsEmpty}
-                  alt="pas de note"
-                  className="star empty-star"
-                />
-                <img
-                  src={starsEmpty}
-                  alt="pas de note"
-                  className="star empty-star"
-                />
-                <img
-                  src={starsEmpty}
-                  alt="pas de note"
-                  className="star empty-star"
-                />
-                <img
-                  src={starsEmpty}
-                  alt="pas de note"
-                  className="star empty-star"
-                />
-              </div>
-            </div>
+            <Rating />
           </div>
 
           <div className="collapse-container">
